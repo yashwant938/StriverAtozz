@@ -1,22 +1,20 @@
 #include<bits/stdc++.h>
  using namespace std;
- void printingg(int i,vector<int>&ds,int arr[],int n,int sum,int s){
+ int printingg(int i,vector<int>&ds,int arr[],int n,int sum,int s){
     if(i==n){
         if(s==sum){
-        for(auto it:ds){
-            cout<<it<<", ";
+            return 1;
         }
-        cout<<endl;
-        }
-        return;
+        return 0;
     }
-    //take
     ds.push_back(arr[i]);
     s+=arr[i];
-    printingg( i+1,ds,arr,n,sum,s);
+    int l=printingg( i+1,ds,arr,n,sum,s);
     s-=arr[i];
     ds.pop_back();
-    printingg(i+1,ds,arr,n,sum,s);
+    int r= printingg(i+1,ds,arr,n,sum,s);
+
+    return l+r;
  }
 int main()
 {
@@ -32,6 +30,6 @@ int n=4;
 
 int sum=6;
 
-printingg(0,ds,arr,n,sum,0);
+cout<<printingg(0,ds,arr,n,sum,0)<<":";
     return 0;
 }
