@@ -1,2 +1,1 @@
-missing_number
-5
+3 is the number of elment in an subarray equivalent to k
