@@ -25,7 +25,6 @@ int stockBuyAndSell(std::vector<int>&arr){
         maxPro=std::max(maxPro, arr[i] - minPrice);
     }
     return maxPro;
-
 }
 int main(){
   #ifndef ONLINE_JUDGE
